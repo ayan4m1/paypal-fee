@@ -1,0 +1,49 @@
+{
+  "author": "ayan4m1 <andrew@bulletlogic.com>",
+  "description": "Calculate PayPal fees",
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.3",
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@types/jest": "^29.5.4",
+    "@types/node": "^20.5.6",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "auto-changelog": "^2.4.0",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.3",
+    "jest": "^29.6.4",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.2",
+    "rollup": "^3.28.1",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "files": [
+    "lib/"
+  ],
+  "license": "MIT",
+  "main": "lib/index.cjs",
+  "module": "lib/index.js",
+  "name": "paypal-fee",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ayan4m1/paypal-fee"
+  },
+  "scripts": {
+    "build": "rollup -c --configPlugin typescript",
+    "develop": "rollup -c -w --configPlugin typescript",
+    "lint": "eslint ./src --ext .ts",
+    "prepack": "rollup -c --configPlugin typescript",
+    "test": "jest",
+    "version": "auto-changelog -p -b 10 -l 10 && git add CHANGELOG.md"
+  },
+  "type": "module",
+  "types": "lib/index.d.ts",
+  "version": "0.1.0"
+}

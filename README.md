@@ -6,10 +6,10 @@
 ## features
 
 - Written in TypeScript
-- Less than 5kB of code
+- Less than 2kB of code
 - No runtime dependencies
 - Supports ESM and CommonJS
-- Comprehensive unit tests
+- Comprehensive integration tests
 
 ## requirements
 
@@ -17,4 +17,20 @@
 
 ## usage
 
+To use this module, simply install it using your favorite package manager and then import the `calculateFee` function.
+
+`calculateFee` takes a payment value in USD and a `PaymentType`, and returns a fee amount in USD.
+
+Payment types are as follows:
+
 ## example
+
+```ts
+import { calculateFee, PaymentType } from 'paypal-fee';
+
+const fee = calculateFee(100, PaymentType.GoodsAndServices);
+
+console.log(fee);
+```
+
+will output `3.98`.

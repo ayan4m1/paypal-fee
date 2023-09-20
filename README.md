@@ -3,6 +3,8 @@
 [![Package Version](https://badge.fury.io/js/paypal-fee.svg)](https://www.npmjs.com/package/paypal-fee)
 [![Code Coverage](https://codecov.io/gh/ayan4m1/paypal-fee/graph/badge.svg?token=IjghFTPyZf)](https://codecov.io/gh/ayan4m1/paypal-fee)
 
+**NOTE**: Most recent audit of PayPal fees was done in September 2023. Fees are subject to change at any time, and this is not an official PayPal module. All use is at your own risk.
+
 ## features
 
 - Written in TypeScript

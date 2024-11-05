@@ -1,3 +1,5 @@
+import { deprecate } from 'util';
+
 export enum PaymentType {
   Checkout,
   GuestCheckout,
@@ -39,19 +41,22 @@ export function calculateFixedFee(
   }
 }
 
-export function calculateFee(
-  value: number,
-  paymentType: PaymentType,
-  international: boolean = false
-): number {
-  const rate = calculateRate(value, paymentType);
-  const fixedFee = calculateFixedFee(value, paymentType);
+export const calculateFee = deprecate(
+  (
+    value: number,
+    paymentType: PaymentType,
+    international: boolean = false
+  ): number => {
+    const rate = calculateRate(value, paymentType);
+    const fixedFee = calculateFixedFee(value, paymentType);
 
-  let result: number = value * rate + fixedFee;
+    let result: number = value * rate + fixedFee;
 
-  if (international) {
-    result += value * 0.015;
-  }
+    if (international) {
+      result += value * 0.015;
+    }
 
-  return result;
-}
+    return result;
+  },
+  'PayPal changed its fee structure, do not rely on this output!'
+);
